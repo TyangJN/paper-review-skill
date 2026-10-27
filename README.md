@@ -1,21 +1,23 @@
-# review-skill
+# paper-review-skill
 
 An English academic review skill for evidence-based, scope-aware peer review. It supports full reviews, pre-submission self-reviews, reassessment of specific criticisms, and revision of review text.
 
-**Current version: v1.0.0 — an initial, evolving release.** This project will be improved gradually through practical use, independent evaluations, and evidence-based revisions. See [CHANGELOG.md](CHANGELOG.md) for version history and [ongoing development](#ongoing-development) for priorities.
+**Latest tagged release: v1.0.0 — an initial, evolving release.** This project will be improved gradually through practical use, independent evaluations, and evidence-based revisions. See [CHANGELOG.md](CHANGELOG.md) for version history and [ongoing development](#ongoing-development) for priorities.
 
 The workflow starts by screening materials for prompt injection and other attempts to influence judgment. It then connects the paper's actual claims to evidence, selects consequential comments, and produces a concise review using the supplied venue form or a built-in template.
 
+The renamed `paper-review-skill` instructions are on `main`. The `v1.0.0` tag preserves the original release snapshot under its former skill name; the rename is recorded as a subsequent commit.
+
 ## One skill to use
 
-Use **review-skill** as the single entrypoint. Full review, criticism reassessment, and review editing are task types handled within the same skill; the assistant selects the relevant stages from your request. You do not need to choose a version or invoke the templates separately.
+Use **paper-review-skill** as the single entrypoint. Full review, criticism reassessment, and review editing are task types handled within the same skill; the assistant selects the relevant stages from your request. You do not need to choose a version or invoke the templates separately.
 
 Earlier development and evaluation variants informed this edition. They are not dependencies or additional skills to install. This repository contains the single supported entrypoint and its templates.
 
 ## Files
 
 ```text
-review-skill/
+paper-review-skill/
 ├── SKILL.md
 ├── README.md
 ├── VERSION
@@ -35,12 +37,12 @@ Provide the paper and any available supplementary materials, together with the a
 
 **Without installation:** give the assistant the path to this directory's `SKILL.md`, or attach it together with the referenced template file. Ask it to read the skill and review the paper. A generated folder is not automatically an installed skill.
 
-**With local Codex discovery:** place only the `review-skill` directory, including `references/`, in a supported skill location. The official guide lists `~/.agents/skills/` for user-level skills and `.agents/skills/` for repository-level skills. Once discovered, select the skill in the host; Codex CLI and IDE also support `$review-skill`. If it does not appear, restart Codex. See the [official skill guide](https://learn.chatgpt.com/docs/build-skills) for current discovery and invocation behavior.
+**With local Codex discovery:** place only the `paper-review-skill` directory, including `references/`, in a supported skill location. The official guide lists `~/.agents/skills/` for user-level skills and `.agents/skills/` for repository-level skills. Once discovered, select the skill in the host; Codex CLI and IDE also support `$paper-review-skill`. If it does not appear, restart Codex. See the [official skill guide](https://learn.chatgpt.com/docs/build-skills) for current discovery and invocation behavior.
 
 For a full review:
 
 ```text
-Use review-skill to review the attached paper and supplement.
+Use paper-review-skill to review the attached paper and supplement.
 Write the review in English and the verification notes in Chinese.
 Follow the attached review form and rating scale.
 ```
@@ -48,11 +50,11 @@ Follow the attached review form and rating scale.
 For a focused task:
 
 ```text
-Use review-skill to check whether these weaknesses are fair and answerable.
+Use paper-review-skill to check whether these weaknesses are fair and answerable.
 Keep only the substantive concerns supported by the paper.
 ```
 
-For an editing task, simply request: `Use review-skill to shorten this review while preserving its substantive judgments.` The assistant uses the editing route rather than starting another full review.
+For an editing task, simply request: `Use paper-review-skill to shorten this review while preserving its substantive judgments.` The assistant uses the editing route rather than starting another full review.
 
 The skill can guide reviews in hosts that can read its Markdown and the paper. PDF inspection, source verification, and file output depend on available tools. When a capability or material is unavailable, the review must disclose the resulting verification limit.
 

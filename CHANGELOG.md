@@ -4,7 +4,11 @@ Noteworthy changes are recorded here. Releases use version tags so the workflow 
 
 ## Unreleased
 
-No changes recorded after the initial release yet. Development priorities are listed in the README; planned work is not presented as completed validation.
+### Changed
+
+- Renamed the repository and current skill entrypoint from `review-skill` to `paper-review-skill` to make the academic paper review purpose explicit.
+- Updated the README, package directory, invocation examples, and release display name.
+- Preserved the published `v1.0.0` tag and its source snapshot; the naming update is tracked in a new commit on `main`.
 
 ## 1.0.0 — 2026-10-27
 
