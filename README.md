@@ -111,13 +111,15 @@ The Chinese workflow underlying this English edition was examined through three 
 
 The supported conclusion is that the workflow makes the requested review constraints explicit and contains corrections grounded in observed failures. Better overall review quality than the original reference remains unproven. More instructions may also add reading cost or unnecessary procedural work, which is why partial requests use only the relevant stages.
 
-This English edition is a translation and packaging update; structural and reference checks do not substitute for a new behavioral evaluation of the translated instructions. Establishing comparative quality would require further independent papers, repeated runs, and evidence-based assessment of incorrect criticisms, important omissions, comment usefulness, and review length rather than score agreement alone.
+The English edition has now completed a [small independent behavioral exercise](evals/english-workflow-2026-10-27/README.md): three fresh-context agents used the English workflow, its Chinese development predecessor, and a frozen DeerFlow reference on four synthetic tasks; a fourth agent audited anonymized outputs. The English run handled the planted override, the mathematical counterexample, the existing ablation, and the constrained editing task appropriately. All three variants produced scientifically usable responses within the requested length limits. Withholding a requested number when no rating scale was supplied was a transparent task-completion tradeoff, not evidence that the reference's disclosed provisional scale was scientifically wrong.
+
+No runtime rule change was justified by that exercise. Its cases, outputs, limits, and audit are published so later improvements can be checked against concrete evidence. This is not validation on additional full papers or proof of comparative quality. Establishing that would require further independent papers, repeated runs, and evidence-based assessment of incorrect criticisms, important omissions, comment usefulness, and review length rather than score agreement alone.
 
 ## Ongoing development
 
 This is a starting point for gradual improvement, not a finished or universally validated reviewer. Future revisions will focus on:
 
-- Evaluating the English workflow on additional paper types and independent runs.
+- Evaluating the English workflow on full-length papers of additional types and repeated independent runs.
 - Reducing unsupported criticisms, missed substantive issues, and low-value requests.
 - Improving the clarity of feedback while keeping the workflow concise.
 - Testing prompt-injection reporting alongside false alarms on legitimate research examples.

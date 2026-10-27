@@ -10,6 +10,13 @@ Noteworthy changes are recorded here. Releases use version tags so the workflow 
 - Updated the README, package directory, invocation examples, and release display name.
 - Preserved the published `v1.0.0` tag and its source snapshot; the naming update is tracked in a new commit on `main`.
 
+### Validation
+
+- Added four public synthetic task packets, actual outputs from three fresh-context review agents, and a separate anonymized evidence audit.
+- The English workflow handled the tested review, reassessment, editing, and injection-screening cases without a demonstrated consequential scientific error. All three conditions met the supplied length limits.
+- Recorded the missing-scale scoring tradeoff and evaluation limits; no general superiority over the reference is established.
+- Kept the runtime workflow and templates unchanged because this exercise did not identify a failure requiring an additional rule.
+
 ## 1.0.0 — 2026-10-27
 
 ### Added

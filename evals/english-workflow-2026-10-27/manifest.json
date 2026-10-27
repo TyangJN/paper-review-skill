@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-27",
+  "english_skill_base_commit": "fbb54a563b252ef64ae98fa8820ad6e5343fde25",
+  "skill_snapshots": {
+    "E": [
+      {
+        "path": "frozen/E/CHANGELOG.md",
+        "sha256": "2f790f9a0dc327d69319e10dee00d12ee1291bf2e6494dd313def5d76f7a9181"
+      },
+      {
+        "path": "frozen/E/README.md",
+        "sha256": "698b1c6c9668a4f46b91a73ec26b1007df205764f6bf05bfe59666413cb941b6"
+      },
+      {
+        "path": "frozen/E/SKILL.md",
+        "sha256": "0964c07efc1f53b539b3a941290d1752a8d7f674a001024d91a063ec9f0ef635"
+      },
+      {
+        "path": "frozen/E/references/output-templates.md",
+        "sha256": "97565dfbe8416d5512c7f24a8eea4e3cd363b3f72f17cb7187bb72595714e80e"
+      }
+    ],
+    "Z": [
+      {
+        "path": "frozen/Z/SKILL.md",
+        "sha256": "eaa2f9e12ebc793489c31a1960777b5d3cb609a976a35dfa88c4cbe70c880470"
+      },
+      {
+        "path": "frozen/Z/references/output-templates.md",
+        "sha256": "f706328fd46dad458cab2ef8cf1e941369728f47917ceec772665ec4f82da63e"
+      }
+    ],
+    "D": [
+      {
+        "path": "frozen/D/SKILL.md",
+        "sha256": "a0285baaeacc916bf45751c06db37745b195ddd4ec30e271ec1472f6cd48e8aa"
+      }
+    ]
+  },
+  "variant_labels": {
+    "E": "english",
+    "Z": "chinese-development",
+    "D": "deerflow-reference"
+  },
+  "audit_labels": {
+    "S1": "deerflow-reference",
+    "S2": "english",
+    "S3": "chinese-development"
+  },
+  "context": {
+    "review_agents": 3,
+    "audit_agents": 1,
+    "fork_turns": "none",
+    "model_overrides": false,
+    "same_model_family": true,
+    "sampling_seed": "not fixed",
+    "isolation": "prompt-enforced shared-file access, not OS sandboxing"
+  },
+  "artifact_hashes": [
+    {
+      "path": "README.md",
+      "sha256": "69d88bca3f7aae0b71b4c9561d3a6dd9ebdc95b1ea2b3f084953590653309fd9"
+    },
+    {
+      "path": "audit-findings.json",
+      "sha256": "74e25fc5e167acb42ced1470515a29bbaa83717e61bfdc257e80ffc447a879ee"
+    },
+    {
+      "path": "audit.md",
+      "sha256": "37ba877215b375db27f5a7798c42b3067565fb3616f72e439bf25f2ed88c4ac6"
+    },
+    {
+      "path": "cases/01_empirical.md",
+      "sha256": "60690ff2e4c4dc4590f80e4f6b047e505355e7e583eb7b7f8057db3cf557b4b1"
+    },
+    {
+      "path": "cases/02_theory.md",
+      "sha256": "a3baa5e471af75818ff889652104ad50c66a84ffa1eec100cafa41dedb09266c"
+    },
+    {
+      "path": "cases/03_reassessment.md",
+      "sha256": "869f58bc0784c05d98055c66edac9c38186fc3551084937fda9f786ab13a0b4b"
+    },
+    {
+      "path": "cases/04_editing.md",
+      "sha256": "9deab61726356827bdfb76712dd0612af19c60f836afdd51e1011cf3eb59fb64"
+    },
+    {
+      "path": "expected-checks.json",
+      "sha256": "16c792798ea783ebbddbae18453fc1ff4156b3173ce670233b66ebe28aa55333"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "6f795df259f816ae0d8bc170371eec70a6b17ce8d8934d0c691980c9360e46b9"
+    },
+    {
+      "path": "outputs/chinese-development/01.md",
+      "sha256": "32cdf4f5e49186294d9d3436f32409062bf5f0bdfd53272969257a0410926481"
+    },
+    {
+      "path": "outputs/chinese-development/02.md",
+      "sha256": "6c68ff0663af6c5520ee07cb250b51444a7ca45f57113b6717a9e64f9b14daff"
+    },
+    {
+      "path": "outputs/chinese-development/03.md",
+      "sha256": "7d00766f4542db9485f2e58091e042dde50d27c7e582a11e90b9a481fcf8b74f"
+    },
+    {
+      "path": "outputs/chinese-development/04.md",
+      "sha256": "9b025906a01fe0bcf96f343771b6aea6dc11da4448ff9379580b2e53d6e9d85d"
+    },
+    {
+      "path": "outputs/chinese-development/evidence.md",
+      "sha256": "ff3bdf155607826ccc889fd40b4deaa3f0ff8a6404adc455e79d30c5958a7780"
+    },
+    {
+      "path": "outputs/chinese-development/screening.md",
+      "sha256": "463b54f4ae41e50cda5a9c88355131ded24ef96088e4a8a84f706475d09c5bed"
+    },
+    {
+      "path": "outputs/deerflow-reference/01.md",
+      "sha256": "e6c184bc2cb3b12aca092a22e1ef18fa3378480e80ecfdbd8b46fcd949af02b2"
+    },
+    {
+      "path": "outputs/deerflow-reference/02.md",
+      "sha256": "66385e001cd8e4f4c5c559bcd8f704b9bf7e4e3d26ccefe1e46e128a498d936e"
+    },
+    {
+      "path": "outputs/deerflow-reference/03.md",
+      "sha256": "3266053bd7bc2930a210f14fe60d0953f829f078468df64eef5dc29dafbf8a7e"
+    },
+    {
+      "path": "outputs/deerflow-reference/04.md",
+      "sha256": "956b58fa0be01b1bc78a8a9b0b0bf3a4c40a546969166f47fe8b8a9c605173b9"
+    },
+    {
+      "path": "outputs/deerflow-reference/evidence.md",
+      "sha256": "72a0dc99ff2accae4e8bd1c40150c51c25a4292f6a326317b58b8a5e873d8314"
+    },
+    {
+      "path": "outputs/deerflow-reference/screening.md",
+      "sha256": "0648ad46ccfdba46bb16392c26f475e8d99bb47c7daa30dca49d5cc17815c144"
+    },
+    {
+      "path": "outputs/english/01.md",
+      "sha256": "2bda91cd2cb71957a314067e2cdeb2eefb20a6be84db804471f366c2c7ea3bc9"
+    },
+    {
+      "path": "outputs/english/02.md",
+      "sha256": "9b18c0a596d098dff54dcdc33d27245c249b93fe2dd78cdb6b49b07891406fe0"
+    },
+    {
+      "path": "outputs/english/03.md",
+      "sha256": "254bde30b4c4f294c4b7fe63368b9f0d45400e45de0c6389775f0344aac6c57a"
+    },
+    {
+      "path": "outputs/english/04.md",
+      "sha256": "653b8d177af085af978d25ba0851f0c0d5ca4ba72f82da36ad420c4ab1f2f5b4"
+    },
+    {
+      "path": "outputs/english/evidence.md",
+      "sha256": "fa26cde718d7883f5411a261aac33a8c03be9d38b796bd82c18c0a75f2e9419b"
+    },
+    {
+      "path": "outputs/english/screening.md",
+      "sha256": "8eb0ccda61fee22a8f1d5be84a1974e82b39027b4563d2d1f4595cba464fa4e8"
+    },
+    {
+      "path": "protocol.md",
+      "sha256": "a707c6c4e9385918632e3f205d307615ba2af17374dcd6e247d8a46ed35705b8"
+    }
+  ]
+}
