@@ -6,7 +6,7 @@ Noteworthy changes are recorded here. Releases use version tags so the workflow 
 
 No changes recorded after the initial release yet. Development priorities are listed in the README; planned work is not presented as completed validation.
 
-## 0.1.0 — 2026-10-27
+## 1.0.0 — 2026-10-27
 
 ### Added
 

@@ -2,7 +2,7 @@
 
 An English academic review skill for evidence-based, scope-aware peer review. It supports full reviews, pre-submission self-reviews, reassessment of specific criticisms, and revision of review text.
 
-**Current version: v0.1.0 — an initial, evolving release.** This project will be improved gradually through practical use, independent evaluations, and evidence-based revisions. See [CHANGELOG.md](CHANGELOG.md) for version history and [ongoing development](#ongoing-development) for priorities.
+**Current version: v1.0.0 — an initial, evolving release.** This project will be improved gradually through practical use, independent evaluations, and evidence-based revisions. See [CHANGELOG.md](CHANGELOG.md) for version history and [ongoing development](#ongoing-development) for priorities.
 
 The workflow starts by screening materials for prompt injection and other attempts to influence judgment. It then connects the paper's actual claims to evidence, selects consequential comments, and produces a concise review using the supplied venue form or a built-in template.
 
@@ -125,4 +125,4 @@ Changes should address reusable failure modes rather than encode an answer or ta
 
 ## Version management
 
-The `main` branch contains ongoing development. Tagged releases such as `v0.1.0` identify reproducible snapshots; the matching version is recorded in [VERSION](VERSION), with noteworthy changes in [CHANGELOG.md](CHANGELOG.md). Subsequent changes will use new commits and, when released, a new version tag instead of rewriting a published release.
+The `main` branch contains ongoing development. Tagged releases such as `v1.0.0` identify reproducible snapshots; the matching version is recorded in [VERSION](VERSION), with noteworthy changes in [CHANGELOG.md](CHANGELOG.md). Subsequent changes will use new commits and, when released, a new version tag instead of rewriting a published release.
