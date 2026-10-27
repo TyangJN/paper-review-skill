@@ -4,6 +4,12 @@ Noteworthy changes are recorded here. Releases use version tags so the workflow 
 
 ## Unreleased
 
+### Added
+
+- Explicit version rules: prompt changes use PATCH, process changes use MINOR, and framework changes use MAJOR, determined by their actual effect.
+- Installation update and rollback guidance, plus a release procedure covering validation, migration, version consistency, and immutable published tags.
+- A planned `v2.0.0` major update for a visual review process. This is a roadmap entry; visualization is not implemented or released yet.
+
 ### Changed
 
 - Renamed the repository and current skill entrypoint from `review-skill` to `paper-review-skill` to make the academic paper review purpose explicit.

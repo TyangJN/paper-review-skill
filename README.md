@@ -4,6 +4,8 @@ An English academic review skill for evidence-based, scope-aware peer review. It
 
 **Latest tagged release: v1.0.0 — an initial, evolving release.** This project will be improved gradually through practical use, independent evaluations, and evidence-based revisions. See [CHANGELOG.md](CHANGELOG.md) for version history and [ongoing development](#ongoing-development) for priorities.
 
+For maintenance, see [how to update an installed copy](#updating-an-installed-copy), [version rules](#version-rules), and [how to prepare a release](#preparing-a-release). The next planned major release is **[v2.0.0: a visual review process](#next-major-release-v200--visual-review-process)**; it has not been released.
+
 The workflow starts by screening materials for prompt injection and other attempts to influence judgment. It then connects the paper's actual claims to evidence, selects consequential comments, and produces a concise review using the supplied venue form or a built-in template.
 
 The renamed `paper-review-skill` instructions are on `main`. The `v1.0.0` tag preserves the original release snapshot under its former skill name; the rename is recorded as a subsequent commit.
@@ -127,6 +129,59 @@ This is a starting point for gradual improvement, not a finished or universally 
 
 Changes should address reusable failure modes rather than encode an answer or target score for a particular paper. Reports of reproducible problems are welcome; use synthetic or otherwise shareable material rather than confidential submissions or private review records.
 
+### Next major release: v2.0.0 — visual review process
+
+**Status: planned, not implemented or released.** The next major update will make the review process visible and navigable, moving beyond a text-only workflow. It is classified as a **major framework change**, not a prompt edit or an extra diagram.
+
+Planned scope:
+
+- A stage view showing material screening, scope definition, evidence verification, comment selection, assessment, and final drafting, with accurate pending, completed, and unresolved states.
+- Traceable connections from a paper's claims to source evidence, selected comments, and the overall assessment. Show concise findings and evidence, not private chain-of-thought.
+- Visible, separate prompt-injection alerts and verification limits, so a completed-looking interface never implies that unavailable evidence was checked.
+- A concise final review that can be exported independently of the process view, with a text fallback when visualization is unavailable.
+
+Before release, validate the complete process on independent materials and fresh contexts, including consistency between displayed status, evidence records, and the exported review. Keep the existing evidence, scope, and review-length safeguards. Interface details remain open until implementation and evaluation; this roadmap does not claim a validated feature or a release date.
+
 ## Version management
 
-The `main` branch contains ongoing development. Tagged releases such as `v1.0.0` identify reproducible snapshots; the matching version is recorded in [VERSION](VERSION), with noteworthy changes in [CHANGELOG.md](CHANGELOG.md). Subsequent changes will use new commits and, when released, a new version tag instead of rewriting a published release.
+The `main` branch contains ongoing development. Published tags identify reproducible releases. On a release commit, [VERSION](VERSION), the `vMAJOR.MINOR.PATCH` tag, the changelog heading, and the release title must agree. Between releases, record changes under **Unreleased**; `VERSION` may still identify the most recent release, so record the commit SHA as well when using `main`.
+
+### Version rules
+
+Use **MAJOR.MINOR.PATCH**. Classify a change by what it changes in review behavior, not by which file was edited or how many lines changed. If an update spans more than one category, use the highest applicable level.
+
+| Update size | Change | Example version | Typical examples |
+|---|---|---|---|
+| Small — **PATCH** | Prompt-level changes within the existing workflow and framework | `1.0.0` → `1.0.1` | Clarifying wording, correcting a misleading instruction, improving examples or review phrasing without changing the stages or their responsibilities |
+| Medium — **MINOR** | Review-process changes within the existing framework | `1.0.1` → `1.1.0` | Adding or reordering a stage, changing a verification gate, or changing how tasks move between stages |
+| Large — **MAJOR** | Changes to the overall review framework or execution/interaction model | `1.1.0` → `2.0.0` | Introducing the planned visual review process, or substantially redesigning how evidence, process state, and user interaction are organized |
+
+A minor release resets PATCH to zero; a major release resets both MINOR and PATCH to zero. A workflow change written entirely in `SKILL.md` is still a minor change; a framework change expressed as prompts is still major. Do not describe either as a patch merely because the implementation is text.
+
+Documentation, attribution, or evaluation-record changes that do not alter review behavior can remain ordinary commits under **Unreleased**. If released on their own, use a patch release. A roadmap entry does not change `VERSION` or create a release. The next planned release is `v2.0.0`; intervening fixes, if needed, must still use the rules above.
+
+### Updating an installed copy
+
+1. Check the copy's `VERSION` and, for a Git checkout, its commit SHA. Read the target release's [changelog](CHANGELOG.md), release notes, and any migration instructions. Use a published release for a reproducible installation; use `main` only when you deliberately want unreleased changes.
+2. Back up local customizations outside the host's skill-discovery directories, so the backup does not appear as a duplicate skill. Keep an ongoing review on its current version; apply an update before starting a new review.
+3. Download the selected version from [GitHub Releases](https://github.com/TyangJN/paper-review-skill/releases) and replace the installed package as a whole, including `SKILL.md` and `references/`. Do not mix a new entrypoint with old templates. Preserve the supported directory name, `paper-review-skill`, for releases using that entrypoint.
+4. For a Git-based installation, inspect local changes first. Commit or otherwise preserve them before switching versions; do not discard them automatically. Replace `/path/to/paper-review-skill` and `TAG` below with the actual directory and an existing published tag:
+
+   ```sh
+   git -C /path/to/paper-review-skill status --short
+   git -C /path/to/paper-review-skill fetch origin --tags
+   git -C /path/to/paper-review-skill switch --detach TAG
+   ```
+
+5. Check that `VERSION` matches the selected release, that the referenced template files exist, and that the host loads the intended copy. Reload the host's skill discovery if needed. Record the version or commit with reviews whose results need to be reproducible. To roll back, restore the previous complete package or switch back to its saved tag/commit.
+
+**Current release boundary:** `v1.0.0` preserves the original `review-skill` entrypoint. The renamed `paper-review-skill` package is currently on `main`; use that branch and record its commit if you need the renamed package before the next release. `v2.0.0` is a plan, not an available download. When replacing an earlier `review-skill` installation with the renamed package, remove or move the old copy out of the discovery directory after preserving customizations, so only one entrypoint is active.
+
+### Preparing a release
+
+1. Describe the problem, intended behavior, scope, and update level in **Unreleased**. For a framework update, record the proposed architecture before implementation; do not promote a planned feature to an implemented claim.
+2. Update the workflow, affected templates, and documentation together. Preserve source-to-comment traceability and the distinction between established defects and open questions. Address general failures rather than encoding a particular paper's answer or score.
+3. Validate in proportion to the change: check structure and local references for every release; run targeted behavioral checks for prompt changes; check affected routes and regressions for process changes; validate the complete interaction and final outputs for framework changes. Use fresh-context evaluation without previous answers or target scores when testing review behavior. Record failures and limits, not just successful examples.
+4. Once the release content is ready, choose the next version under the rules above, set `VERSION`, move the relevant **Unreleased** entries into a dated version section, and update the README's latest-release statement. Include migration and rollback instructions whenever the package layout, workflow inputs/outputs, or interaction model changes.
+5. Commit the release contents, create `vMAJOR.MINOR.PATCH` on that exact commit, and publish matching GitHub release notes describing the changes, validation, known limits, and upgrade steps. Include only shareable materials; keep private submissions and review records out of the release.
+6. Verify the published tag, commit, packaged files, and `VERSION`. Preserve published tags and source snapshots; corrections use a new commit and an appropriately incremented release instead of moving or overwriting an old tag.
